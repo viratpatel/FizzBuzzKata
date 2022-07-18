@@ -7,11 +7,19 @@ const fizzBuzz = (numbers) => {
 };
 
 const identifyNumber = (number) => {
-  if (number % 5 === 0 && number % 3 === 0) return "FizzBuzz";
-  if (number % 3 === 0) return "Fizz";
-  if (number % 5 === 0) return "Buzz";
+  if (isDivisibleByFive(number) && isDivisibleByThree(number)) return "FizzBuzz";
+  if (isDivisibleByThree(number)) return "Fizz";
+  if (isDivisibleByFive(number)) return "Buzz";
   return number;
 };
+
+const isDivisibleByFive = (number) => {
+  return number % 5 == 0;
+}
+
+const isDivisibleByThree = (number) => {
+  return number % 3 == 0;
+}
 
 exports.fizzBuzz = fizzBuzz;
 exports.identifyNumber = identifyNumber;
